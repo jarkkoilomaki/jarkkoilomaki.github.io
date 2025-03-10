@@ -1,3 +1,421 @@
-<HTML>
-<BODY>Tulossa!</BODY>
-</HTML>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarkko Ilomäki - kuntavaalit 2025</title>
+  <!-- Google-fontit (Barlow Condensed, Source Serif Pro, Permanent Marker) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Permanent+Marker&family=Source+Serif+Pro:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* 
+      Värit Kokoomuksen graafisen ohjeistuksen mukaisesti:
+      Tummansininen (pääväri):  #003a54
+      Vaaleansininen (korostus): #b0d9eb
+      Beige (taustaväri):       #dad1bf
+      Punainen (korostus):      #9e0b0f
+    */
+
+    :root {
+      --tummansininen: #003a54;
+      --vaaleansininen: #b0d9eb;
+      --beige: #dad1bf;
+      --punainen: #9e0b0f;
+
+      --font-otsikko: 'Barlow Condensed', sans-serif;
+      --font-leipateksti: 'Source Serif Pro', serif;
+      --font-korostus: 'Permanent Marker', cursive;
+    }
+
+    /* Yleiset tyylimääritykset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-leipateksti);
+      background-color: var(--beige);
+      color: #000;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: var(--tummansininen);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+
+    /* Logo/nimi vasemmalla */
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    .logo .site-title {
+      font-family: var(--font-otsikko);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Navigaatio-oletus */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav li a {
+      font-family: var(--font-otsikko);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: var(--vaaleansininen);
+      color: var(--tummansininen);
+    }
+
+    /* Hamburger-menu pienillä näytöillä */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: 0.4s;
+    }
+
+    /* Hero-osiota (etusivun iso alue) */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: var(--vaaleansininen);
+    }
+
+    .hero h1 {
+      font-family: var(--font-otsikko);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      font-family: var(--font-otsikko);
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .highlight {
+      font-family: var(--font-korostus);
+      color: var(--punainen);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin: 1rem 0;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .hero button {
+      font-family: var(--font-otsikko);
+      background-color: var(--tummansininen);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero button:hover {
+      background-color: var(--punainen);
+    }
+
+    /* Esittely- tai sisältöosio */
+    .content-section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .content-section h3 {
+      font-family: var(--font-otsikko);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      color: var(--tummansininen);
+    }
+
+    .content-section .ingressi {
+      font-family: var(--font-leipateksti);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .content-section p {
+      margin-bottom: 1rem;
+    }
+	
+	.lupaus-card {
+	  background-color: #fff; /* Valkoinen tausta erottuu beigestä */
+	  border: 1px solid var(--vaaleansininen);
+	  border-radius: 4px;
+	  padding: 1rem;
+	  margin-bottom: 2rem;
+	  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.lupaus-card h4 {
+	  font-family: var(--font-otsikko);
+	  font-size: 1.4rem;
+	  margin-bottom: 0.5rem;
+	  color: var(--tummansininen);
+	  text-transform: uppercase;
+	}
+
+	.lupaus-card p {
+	  margin-bottom: 1rem;
+	  line-height: 1.6;
+	}
+
+	.lupaus-card ul {
+	  list-style-type: disc;
+	  padding-left: 1.5rem;
+	  margin-bottom: 0;
+	}
+
+	.lupaus-card ul li {
+	  margin-bottom: 0.5rem;
+	}
+
+    /* Footer */
+    footer {
+      background-color: var(--tummansininen);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px; 
+        right: 0;
+        background-color: var(--tummansininen);
+        flex-direction: column;
+        width: 200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        padding: 1rem;
+      }
+
+      nav ul.open {
+        transform: translateX(0);
+      }
+
+      .hamburger {
+        display: flex;
+      }
+	  
+
+
+	  
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo/nimilogo -->
+    <div class="logo">
+      <img src="img/kok_logo.png" alt="logo" />
+      <span class="site-title">Jarkko Ilomäki</span>
+    </div>
+
+    <!-- Hamburger valikko (mobiilia varten) -->
+    <div class="hamburger" id="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigaatio -->
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="#etusivu">Etusivu</a></li>
+        <li><a href="#vaalilupaus">Vaalilupaukseni</a></li>
+        <li><a href="#teemat">Teemat</a></li>
+        <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="etusivu">
+    <h1>Anna äänesi tulevaisuudelle</h1>
+    <h2>Kuntavaalit 2025</h2>
+    <p class="highlight">Näytetään yhdessä suunta!</p>
+    <p>
+      Haluan kehittää kotikuntaamme järkevillä ja kestäville ratkaisuille pohjautuvilla päätöksillä. Talouden tasapainottaminen, laadukkaat koulutuspalvelut ja toimivat peruspalvelut ovat minulle tärkeitä tavoitteita. Päätöksenteon tulee olla käytännönläheistä ja vastuullista – niin, että se palvelee kuntalaisia oikeudenmukaisesti ja pitkäjänteisesti.
+	</p><p>
+	Keskustellaan, vaikutetaan ja tehdään yhdessä kunnasta entistä elinvoimaisempi ja parempi paikka asua, yrittää ja elää.
+    </p>
+	</section>
+
+  <section class="content-section" id="vaalilupaus">
+    <h3>Keskeiset vaalilupaukseni</h3>
+<!-- Porvoon talous -lupaus -->
+  <div class="lupaus-card">
+    <h4>Porvoon talous tulee turvata</h4>
+    <p>
+      Porvoon talous on tällä hetkellä vakaalla pohjalla, 
+      mutta vuodesta 2026 alkaen alijäämä uhkaa kasvaa. 
+      <strong>On toimittava ennakoivasti ja vastuullisesti, jotta 
+      vältytään veronkorotuksilta ja pakkoleikkauksilta.</strong>
+    </p>
+    <ul>
+      <li>
+        Teen talouspäätökset ajoissa ja järkevällä tavalla 
+        turvaten peruspalvelut.
+      </li>
+      <li>
+        Sitoidun kestävään taloudenpitoon ilman 
+        yllättäviä kiristyksiä.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Tarmolan kehittäminen -lupaus -->
+  <div class="lupaus-card">
+    <h4>Tarmolan kehittäminen</h4>
+    <p>
+      Tarmolasta puuttuvat vielä kaupan suuryksikkö ja apteekki, 
+      jotka palvelisivat sekä paikallisia että moottoritietä 
+      käyttäviä. Tarmolan kehittäminen on olennainen osa 
+      Porvoon elinvoiman vahvistamista.
+    </p>
+    <ul>
+      <li>
+        Edistän kaupan suuryksikön ja apteekin 
+        toteutumista alueella.
+      </li>
+      <li>
+        Huolehdin siitä, että kaavoitus- ja 
+        infraratkaisut tukevat sujuvaa kasvua.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nuorten tukeminen -lupaus -->
+  <div class="lupaus-card">
+    <h4>Nuorten tukeminen ja paluumuuttajien houkuttelu</h4>
+    <p>
+      Lasten ja nuorten määrän lasku vaikuttaa suoraan Porvoon 
+      tulevaisuuteen. Haluan panostaa heidän hyvinvointiinsa, 
+      koulutukseensa ja työmahdollisuuksiinsa, jotta Porvoo pysyy 
+      houkuttelevana asuinpaikkana.
+    </p>
+    <ul>
+      <li>
+        Edistän opiskelumahdollisuuksia ja 
+        työelämäyhteyksiä, jotta nuoret jäisivät 
+        Porvooseen tai palaisivat valmistuttuaan.
+      </li>
+      <li>
+        Tuon konkreettisia ratkaisuja nuorten harrastus- 
+        ja kulttuurimahdollisuuksien parantamiseksi sekä 
+        ensimmäisten työpaikkojen luomiseksi.
+      </li>
+      <li>
+        Kehitän perheystävällisiä palveluja ja 
+        viihtyisiä asuinalueita, jotka kannustavat 
+        nuoria aikuisia jäämään Porvooseen.
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <section class="content-section" id="teemat">
+    <h3>Teemat</h3>
+    <p class="ingressi">
+      Kuntapolitiikassa kaivataan uusia ideoita ja ratkaisukeskeistä
+      toimintaa.
+    </p>
+    <p>
+	Haluan kehittää kuntaamme tasapainoisen talouden, laadukkaan koulutuksen ja elinvoimaisen yritys- ja palveluympäristön pohjalta. Päätöksenteon tulee olla käytännönläheistä, kestävää ja pitkäjänteistä – niin, että palvelut turvataan tehokkaasti ilman tarpeetonta verotaakkaa tai heikennyksiä peruspalveluihin.
+</p><p>
+✅ Talous ja palvelut tasapainossa – Kunnan taloutta on hoidettava vastuullisesti, jotta vältymme veronkorotuksilta ja voimme turvata lähipalvelut ilman tarpeettomia leikkauksia.
+</p><p>
+✅ Koulutus ja turvallinen oppimisympäristö – Kouluissa tarvitaan työrauhaa ja selkeitä sääntöjä, jotta oppiminen ja hyvinvointi voidaan turvata. Koulutuksen pitää antaa jokaiselle aidot mahdollisuudet menestyä.
+</p><p>
+✅ Yritykset ja työpaikat osana kunnan elinvoimaa – Kunnan tulee aktiivisesti houkutella investointeja ja mahdollistaa yritystoiminnan kasvu. Hyvinvoiva elinkeinoelämä tarkoittaa lisää työpaikkoja ja vahvempaa kuntaa.
+</p><p>
+✅ Järkevää kehitystä, ei ideologista sääntelyä – Rakentaminen, liikenne ja energia tulee suunnitella fiksusti, ottaen huomioon kuntalaisten tarpeet eikä pelkästään ohimenevien trendien perusteella.
+</p><p>
+✅ Avoimuus ja yhteistyö – Kuuntelen kuntalaisten ajatuksia ja haen ratkaisuja yhteistyössä. Parhaat päätökset syntyvät keskustelun ja harkinnan kautta, ei valmiiksi annettuina totuuksina.
+
+
+    </p>
+  </section>
+
+
+
+  <section class="content-section" id="yhteystiedot">
+    <h3>Yhteystiedot</h3>
+    <p class="ingressi">Ota yhteyttä – kaikki ideat ja kysymykset ovat tervetulleita!</p>
+    <p>
+      Sähköposti: jarkko.ilomaki (at) gmail.com <br/>
+	  Facebook: <a href="https://www.facebook.com/jarkkoilomakiporvoo"><u>Kv-profiili</u></a> </br>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kuntavaalikampanja – Kaikki oikeudet pidätetään.</p>
+  </footer>
+
+  <script>
+    // Pieni JavaScript-valikko mobiilikäyttöön:
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
