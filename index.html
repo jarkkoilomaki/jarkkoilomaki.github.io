@@ -321,6 +321,44 @@
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		min-width: 220px;
 	}
+	
+	.generic-link {
+	  display: inline-block;
+	  align-items: center;
+	  gap: 8px;
+	  background-color: var(--tummansininen);
+	  color: #fff;
+	  padding: 10px 15px;
+	  margin: 10px 0;
+	  border-radius: 6px;
+	  text-decoration: none;
+	  font-weight: bold;
+	  transition: background-color 0.3s;
+	}
+	
+	.vaalikone-link {
+	  display: inline-block;
+	  align-items: center;
+	  gap: 8px;
+	  background-color: var(--tummansininen);
+	  color: #fff;
+	  padding: 10px 15px;
+	  margin: 10px 0;
+	  border-radius: 6px;
+	  text-decoration: none;
+	  font-weight: bold;
+	  transition: background-color 0.3s;
+	}
+
+	.vaalikone-link:hover {
+	  background-color: var(--punainen);
+	}
+
+	.vaalikone-link::before {
+	  content: '🗳️';
+	  font-size: 1.2rem;
+	}
+
     /* Footer */
     footer {
       background-color: var(--tummansininen);
@@ -535,14 +573,14 @@
         <p class="ingressi">Ota yhteyttä – kaikki ideat ja kysymykset ovat tervetulleita!</p>
         <p>
             📧 Sähköposti: jarkko.ilomaki (at) gmail.com <br/>
-            📘 Facebook: <a href="https://www.facebook.com/jarkkoilomakiporvoo" target="_blank"><u>Kuntavaaliprofiili</u></a> <br/>
-            🔗 LinkedIn: <a href="https://www.linkedin.com/in/jarkkoilomaki" target="_blank"><u>LinkedIn-profiili</u></a> <br/>
+            📘 Facebook: <a href="https://www.facebook.com/jarkkoilomakiporvoo" target="_blank" class="generic-link"><u>Kuntavaaliprofiili</u></a> <br/>
+            🔗 LinkedIn: <a href="https://www.linkedin.com/in/jarkkoilomaki" target="_blank" class="generic-link"><u>LinkedIn-profiili</u></a> <br/>
             🗳️ Vaalikoneet: 
-            <a href="https://www.uusimaa.fi/vaalikone/#/101/kotikunta/638/ehdokkaat/7906" target="_blank"><u>Uusimaa</u></a>, 
-			<a href="https://vaalikone.online/2/72/candidate/3755" target="_blank"><u>Itäväylä</u></a>, 
-            <a href="https://www.mtvuutiset.fi/vaalikone/101/vaalipiiri/351/ehdokkaat/14582" target="_blank"><u>MTV Vaalikone</u></a>, 
-            <a href="https://vaalit.yle.fi/vaalikone/kuntavaalit2025/183/ehdokkaat/12080" target="_blank"><u>YLE Vaalikone</u></a> 
-			<a href="https://www.vaalikone.fi/kunta2025/hs/ehdokkaat/0904c3c0-dd95-47d7-a118-85620cdbed74" target="_blank"><u>Sanoma Vaalikone</u></a>, 
+            <a href="https://www.uusimaa.fi/vaalikone/#/101/kotikunta/638/ehdokkaat/7906" target="_blank" class="vaalikone-link"><u>Uusimaa</u></a>
+			<a href="https://vaalikone.online/2/72/candidate/3755" target="_blank" class="vaalikone-link"><u>Itäväylä</u></a>
+            <a href="https://www.mtvuutiset.fi/vaalikone/101/vaalipiiri/351/ehdokkaat/14582" target="_blank" class="vaalikone-link"><u>MTV</u></a> 
+            <a href="https://vaalit.yle.fi/vaalikone/kuntavaalit2025/183/ehdokkaat/12080" target="_blank" class="vaalikone-link"><u>YLE</u></a> 
+			<a href="https://www.vaalikone.fi/kunta2025/hs/ehdokkaat/0904c3c0-dd95-47d7-a118-85620cdbed74" target="_blank" class="vaalikone-link"><u>Sanoma</u></a> 
         </p>
     </div>
     <div class="contact-number">
