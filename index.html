@@ -3,21 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jarkko Ilomäki - kuntavaalit 2025</title>
+  <title>Jarkko Ilomäki 218 - kuntavaalit 2025</title>
   <!-- Google-fontit (Barlow Condensed, Source Serif Pro, Permanent Marker) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Permanent+Marker&family=Source+Serif+Pro:ital,wght@0,400;1,400&display=swap"
     rel="stylesheet"
   />
   <style>
-    /* 
-      Värit Kokoomuksen graafisen ohjeistuksen mukaisesti:
-      Tummansininen (pääväri):  #003a54
-      Vaaleansininen (korostus): #b0d9eb
-      Beige (taustaväri):       #dad1bf
-      Punainen (korostus):      #9e0b0f
-    */
-
     :root {
       --tummansininen: #003a54;
       --vaaleansininen: #b0d9eb;
@@ -29,7 +21,6 @@
       --font-korostus: 'Permanent Marker', cursive;
     }
 
-    /* Yleiset tyylimääritykset */
     * {
       margin: 0;
       padding: 0;
@@ -58,7 +49,6 @@
       position: relative;
     }
 
-    /* Logo/nimi vasemmalla */
     .logo {
       display: flex;
       align-items: center;
@@ -76,7 +66,6 @@
       letter-spacing: 1px;
     }
 
-    /* Navigaatio-oletus */
     nav ul {
       display: flex;
       list-style: none;
@@ -96,7 +85,6 @@
       color: var(--tummansininen);
     }
 
-    /* Hamburger-menu pienillä näytöillä */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -111,7 +99,6 @@
       transition: 0.4s;
     }
 
-    /* Hero-osiota (etusivun iso alue) */
     .hero {
       display: flex;
       flex-direction: column;
@@ -165,6 +152,27 @@
     .hero button:hover {
       background-color: var(--punainen);
     }
+	
+	.hero-content {
+		display: flex;
+		align-items: center;
+		text-align: left;
+		max-width: 800px;
+		width: 100%;
+		gap: 20px;
+	}
+
+	.hero-content img {
+		width: 200px; /* Adjust size as needed */
+		height: auto;
+		border-radius: 10px;
+	}
+
+	.hero-text {
+		flex: 1;
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
 
     /* Esittely- tai sisältöosio */
     .content-section {
@@ -190,7 +198,37 @@
     .content-section p {
       margin-bottom: 1rem;
     }
-	
+		.cv-section {
+		background-color: #fff;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		margin-bottom: 1.5rem;
+	}
+
+	.cv-section h4 {
+		font-family: var(--font-otsikko);
+		font-size: 1.6rem;
+		color: var(--tummansininen);
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	.cv-list {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.cv-list li {
+		font-size: 1.1rem;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid var(--vaaleansininen);
+	}
+
+	.cv-list li:last-child {
+		border-bottom: none;
+	}
+
 	.lupaus-card {
 	  background-color: #fff; /* Valkoinen tausta erottuu beigestä */
 	  border: 1px solid var(--vaaleansininen);
@@ -223,6 +261,32 @@
 	  margin-bottom: 0.5rem;
 	}
 
+	.contact-section {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: var(--vaaleansininen);
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		flex-wrap: wrap;
+	}
+
+	.contact-info {
+		flex: 1;
+	}
+
+	.contact-number {
+		background-color: #fff;
+		color: var(--tummansininen);
+		font-size: 6rem;
+		font-weight: bold;
+		padding: 1rem 2rem;
+		border-radius: 10px;
+		text-align: center;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		min-width: 220px;
+	}
     /* Footer */
     footer {
       background-color: var(--tummansininen);
@@ -255,33 +319,30 @@
       }
 	  
 
-
 	  
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Logo/nimilogo -->
     <div class="logo">
       <img src="img/kok_logo.png" alt="logo" />
-      <span class="site-title">Jarkko Ilomäki</span>
+      <span class="site-title">218 - Jarkko Ilomäki</span>
     </div>
 
-    <!-- Hamburger valikko (mobiilia varten) -->
     <div class="hamburger" id="hamburger-btn">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- Navigaatio -->
     <nav>
       <ul id="nav-menu">
         <li><a href="#etusivu">Etusivu</a></li>
         <li><a href="#vaalilupaus">Vaalilupaukseni</a></li>
         <li><a href="#teemat">Teemat</a></li>
-        <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+        <li><a href="#CV">CV</a></li>
+		<li><a href="#yhteystiedot">Yhteystiedot</a></li>
       </ul>
     </nav>
   </header>
@@ -290,15 +351,51 @@
     <h1>Anna äänesi tulevaisuudelle</h1>
     <h2>Kuntavaalit 2025</h2>
     <p class="highlight">Näytetään yhdessä suunta!</p>
-    <p>
-      Haluan kehittää kotikuntaamme järkevillä ja kestäville ratkaisuille pohjautuvilla päätöksillä. Talouden tasapainottaminen, laadukkaat koulutuspalvelut ja toimivat peruspalvelut ovat minulle tärkeitä tavoitteita. Päätöksenteon tulee olla käytännönläheistä ja vastuullista – niin, että se palvelee kuntalaisia oikeudenmukaisesti ja pitkäjänteisesti.
-	</p><p>
-	Keskustellaan, vaikutetaan ja tehdään yhdessä kunnasta entistä elinvoimaisempi ja parempi paikka asua, yrittää ja elää.
-    </p>
+	    <div class="hero-content">
+        <img src="img/jarkko.jpg" alt="Jarkko">
+        <div class="hero-text">
+            <p>
+                Haluan kehittää kotikuntaamme järkevillä ja kestäville ratkaisuille pohjautuvilla päätöksillä. Talouden tasapainottaminen, laadukkaat koulutuspalvelut ja toimivat peruspalvelut ovat minulle tärkeitä tavoitteita. Päätöksenteon tulee olla käytännönläheistä ja vastuullista – niin, että se palvelee kuntalaisia oikeudenmukaisesti ja pitkäjänteisesti.
+            </p>
+            <p>
+                Keskustellaan, vaikutetaan ja tehdään yhdessä kunnasta entistä elinvoimaisempi ja parempi paikka asua, yrittää ja elää.
+            </p>
+        </div>
+		<img src="img/218.jpg" alt="218">
+    </div>
+
 	</section>
 
   <section class="content-section" id="vaalilupaus">
     <h3>Keskeiset vaalilupaukseni</h3>
+	
+	<!-- Nuorten tukeminen -lupaus -->
+	<div class="lupaus-card">
+    <h4>Nuorten tukeminen ja paluumuuttajien houkuttelu</h4>
+    <p>
+      Lasten ja nuorten määrän lasku vaikuttaa suoraan Porvoon 
+      tulevaisuuteen. Haluan panostaa heidän hyvinvointiinsa, 
+      koulutukseensa ja työmahdollisuuksiinsa, jotta Porvoo pysyy 
+      houkuttelevana asuinpaikkana.
+    </p>
+    <ul>
+      <li>
+        Pyrin edistämään opiskelumahdollisuuksia ja 
+        työelämäyhteyksiä, jotta nuoret jäisivät 
+        Porvooseen tai palaisivat valmistuttuaan.
+      </li>
+      <li>
+        Pyrin tuomaan konkreettisia ratkaisuja nuorten harrastus- 
+        ja kulttuurimahdollisuuksien parantamiseksi sekä 
+        ensimmäisten työpaikkojen luomiseksi.
+      </li>
+      <li>
+        Haluan kehittää perheystävällisiä palveluja ja 
+        viihtyisiä asuinalueita, jotka kannustavat 
+        nuoria aikuisia jäämään Porvooseen.
+      </li>
+    </ul>
+  </div>
 <!-- Porvoon talous -lupaus -->
   <div class="lupaus-card">
     <h4>Porvoon talous tulee turvata</h4>
@@ -310,8 +407,8 @@
     </p>
     <ul>
       <li>
-        Teen talouspäätökset ajoissa ja järkevällä tavalla 
-        turvaten peruspalvelut.
+        Talouspäätökset on thetävä ajoissa ja järkevällä tavalla 
+        peruspalvelut turvaten.
       </li>
       <li>
         Sitoidun kestävään taloudenpitoon ilman 
@@ -324,50 +421,20 @@
   <div class="lupaus-card">
     <h4>Tarmolan kehittäminen</h4>
     <p>
-      Tarmolasta puuttuvat vielä kaupan suuryksikkö ja apteekki, 
-      jotka palvelisivat sekä paikallisia että moottoritietä 
+      Tarmolasta puuttuvat sekä kaupan suuryksikkö (Prisma) että apteekki. 
+      Molemmat palvelisivat sekä paikallisia että moottoritietä 
       käyttäviä. Tarmolan kehittäminen on olennainen osa 
       Porvoon elinvoiman vahvistamista.
     </p>
     <ul>
       <li>
-        Edistän kaupan suuryksikön ja apteekin 
+        Lupaan edistää kaupan suuryksikön ja apteekin 
         toteutumista alueella.
-      </li>
-      <li>
-        Huolehdin siitä, että kaavoitus- ja 
-        infraratkaisut tukevat sujuvaa kasvua.
       </li>
     </ul>
   </div>
 
-  <!-- Nuorten tukeminen -lupaus -->
-  <div class="lupaus-card">
-    <h4>Nuorten tukeminen ja paluumuuttajien houkuttelu</h4>
-    <p>
-      Lasten ja nuorten määrän lasku vaikuttaa suoraan Porvoon 
-      tulevaisuuteen. Haluan panostaa heidän hyvinvointiinsa, 
-      koulutukseensa ja työmahdollisuuksiinsa, jotta Porvoo pysyy 
-      houkuttelevana asuinpaikkana.
-    </p>
-    <ul>
-      <li>
-        Edistän opiskelumahdollisuuksia ja 
-        työelämäyhteyksiä, jotta nuoret jäisivät 
-        Porvooseen tai palaisivat valmistuttuaan.
-      </li>
-      <li>
-        Tuon konkreettisia ratkaisuja nuorten harrastus- 
-        ja kulttuurimahdollisuuksien parantamiseksi sekä 
-        ensimmäisten työpaikkojen luomiseksi.
-      </li>
-      <li>
-        Kehitän perheystävällisiä palveluja ja 
-        viihtyisiä asuinalueita, jotka kannustavat 
-        nuoria aikuisia jäämään Porvooseen.
-      </li>
-    </ul>
-  </div>
+  
 </section>
 
   <section class="content-section" id="teemat">
@@ -392,17 +459,57 @@
 
     </p>
   </section>
+<section class="content-section" id="cv">
+    <h3>CV – Kokemukseni ja luottamustehtävät</h3>
+    <p class="ingressi">Tässä tiivistelmä urastani, luottamustehtävistäni ja taustastani.</p>
+
+    <div class="cv-section">
+        <h4>Työkokemus</h4>
+        <ul class="cv-list">
+            <li><strong>Varatoimitusjohtaja & liiketoimintajohtaja</strong>, Suomen johtavassa maatalouden IT-alan yrityksessä. Olen työskennellyt useissa eri tehtävissä ohjelmistokehittäjästä ylimpään johtoon asti.</li>
+            <li><strong>Hallituksen jäsen</strong>, kolmen eri yrityksen hallituksessa</li>
+        </ul>
+    </div>
+
+    <div class="cv-section">
+        <h4>Luottamustehtävät</h4>
+        <ul class="cv-list">
+            <li><strong>Jäsen</strong>, Porvoon Elinvoimalautakunta (2024–nykyhetki)</li>
+            <li><strong>Varapuheenjohtaja</strong>, Itä-Uudenmaan hyvinvointialueen aluevaalilautakunta (2021–nykyhetki)</li>
+        </ul>
+    </div>
+
+    <div class="cv-section">
+        <h4>Koulutus</h4>
+        <ul class="cv-list">
+            <li><strong>Diplomi-insinööri</strong>, Teknillinen Korkeakoulu (nyk. Aalto) (2004)</li>
+            <li><strong>MBA</strong>, University of Northampton (2022)</li>
+        </ul>
+    </div>
+</section>
+
+</section>
 
 
 
-  <section class="content-section" id="yhteystiedot">
-    <h3>Yhteystiedot</h3>
-    <p class="ingressi">Ota yhteyttä – kaikki ideat ja kysymykset ovat tervetulleita!</p>
-    <p>
-      Sähköposti: jarkko.ilomaki (at) gmail.com <br/>
-	  Facebook: <a href="https://www.facebook.com/jarkkoilomakiporvoo"><u>Kv-profiili</u></a> </br>
-    </p>
-  </section>
+<section class="content-section contact-section" id="yhteystiedot">
+    <div class="contact-info">
+        <h3>Yhteystiedot</h3>
+        <p class="ingressi">Ota yhteyttä – kaikki ideat ja kysymykset ovat tervetulleita!</p>
+        <p>
+            📧 Sähköposti: jarkko.ilomaki (at) gmail.com <br/>
+            📘 Facebook: <a href="https://www.facebook.com/jarkkoilomakiporvoo" target="_blank"><u>Kuntavaaliprofiili</u></a> <br/>
+            🔗 LinkedIn: <a href="https://www.linkedin.com/in/jarkkoilomaki" target="_blank"><u>LinkedIn-profiili</u></a> <br/>
+            🗳️ Vaalikoneet: 
+            <a href="https://www.uusimaa.fi/vaalikone/#/101/kotikunta/638/ehdokkaat/7906" target="_blank"><u>Uusimaa</u></a>, 
+            <a href="https://www.mtvuutiset.fi/vaalikone/101/vaalipiiri/351/ehdokkaat/14582" target="_blank"><u>MTV Vaalikone</u></a>, 
+            <a href="https://vaalit.yle.fi/vaalikone/kuntavaalit2025/183/ehdokkaat/12080" target="_blank"><u>YLE Vaalikone</u></a> 
+        </p>
+    </div>
+    <div class="contact-number">
+        <span>218</span>
+    </div>
+</section>
 
   <footer>
     <p>© 2025 Kuntavaalikampanja – Kaikki oikeudet pidätetään.</p>
