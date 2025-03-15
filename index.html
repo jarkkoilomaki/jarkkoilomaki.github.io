@@ -47,6 +47,11 @@
       align-items: center;
       padding: 1rem 1.5rem;
       position: relative;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease-in-out;
     }
 
     .logo {
@@ -168,12 +173,33 @@
 		border-radius: 10px;
 	}
 
+	.hero-img, .hero-number {
+		width: 200px; /* Säädettävissä */
+		height: auto;
+		border-radius: 10px;
+	}
 	.hero-text {
 		flex: 1;
 		font-size: 1.1rem;
 		line-height: 1.6;
+		text-align: left;
 	}
+	
+	@media screen and (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-img, .hero-number {
+        width: 150px; /* Pienempi mobiilissa */
+    }
+}
     /* Esittely- tai sisältöosio */
     .content-section {
       padding: 3rem 1rem;
@@ -193,6 +219,14 @@
       font-family: var(--font-leipateksti);
       font-style: italic;
       margin-bottom: 1rem;
+    }
+	
+	.content-section .ingressired {
+      font-family: var(--font-leipateksti);
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-family: var(--font-korostus);
+      color: var(--punainen);
     }
 
     .content-section p {
@@ -347,12 +381,14 @@
     </nav>
   </header>
 
-  <section class="hero" id="etusivu">
+<section class="hero" id="etusivu">
     <h1>Anna äänesi tulevaisuudelle</h1>
     <h2>Kuntavaalit 2025</h2>
     <p class="highlight">Näytetään yhdessä suunta!</p>
-	    <div class="hero-content">
-        <img src="img/jarkko.jpg" alt="Jarkko">
+    
+    <div class="hero-content">
+        <img src="img/jarkko.jpg" alt="Jarkko" class="hero-img">
+        
         <div class="hero-text">
             <p>
                 Haluan kehittää kotikuntaamme järkevillä ja kestäville ratkaisuille pohjautuvilla päätöksillä. Talouden tasapainottaminen, laadukkaat koulutuspalvelut ja toimivat peruspalvelut ovat minulle tärkeitä tavoitteita. Päätöksenteon tulee olla käytännönläheistä ja vastuullista – niin, että se palvelee kuntalaisia oikeudenmukaisesti ja pitkäjänteisesti.
@@ -360,11 +396,12 @@
             <p>
                 Keskustellaan, vaikutetaan ja tehdään yhdessä kunnasta entistä elinvoimaisempi ja parempi paikka asua, yrittää ja elää.
             </p>
+			<p>Paremman kuvan ajatuksistani saat eri tahojen vaalikoneista, jotka on linkattu alas <u><a href="#yhteystiedot">Yhteystiedot</a></u>-osioon </p>
         </div>
-		<img src="img/218.jpg" alt="218">
-    </div>
 
-	</section>
+        <img src="img/218.jpg" alt="218" class="hero-number">
+    </div>
+</section>
 
   <section class="content-section" id="vaalilupaus">
     <h3>Keskeiset vaalilupaukseni</h3>
@@ -439,13 +476,13 @@
 
   <section class="content-section" id="teemat">
     <h3>Teemat</h3>
-    <p class="ingressi">
+    <p class="ingressired">
       Kuntapolitiikassa kaivataan uusia ideoita ja ratkaisukeskeistä
       toimintaa.
     </p>
     <p>
 	Haluan kehittää kuntaamme tasapainoisen talouden, laadukkaan koulutuksen ja elinvoimaisen yritys- ja palveluympäristön pohjalta. Päätöksenteon tulee olla käytännönläheistä, kestävää ja pitkäjänteistä – niin, että palvelut turvataan tehokkaasti ilman tarpeetonta verotaakkaa tai heikennyksiä peruspalveluihin.
-</p><p>
+</p><div class="cv-section">
 ✅ Talous ja palvelut tasapainossa – Kunnan taloutta on hoidettava vastuullisesti, jotta vältymme veronkorotuksilta ja voimme turvata lähipalvelut ilman tarpeettomia leikkauksia.
 </p><p>
 ✅ Koulutus ja turvallinen oppimisympäristö – Kouluissa tarvitaan työrauhaa ja selkeitä sääntöjä, jotta oppiminen ja hyvinvointi voidaan turvata. Koulutuksen pitää antaa jokaiselle aidot mahdollisuudet menestyä.
@@ -457,7 +494,7 @@
 ✅ Avoimuus ja yhteistyö – Kuuntelen kuntalaisten ajatuksia ja haen ratkaisuja yhteistyössä. Parhaat päätökset syntyvät keskustelun ja harkinnan kautta, ei valmiiksi annettuina totuuksina.
 
 
-    </p>
+    </d></div>
   </section>
 <section class="content-section" id="cv">
     <h3>CV – Kokemukseni ja luottamustehtävät</h3>
@@ -502,8 +539,10 @@
             🔗 LinkedIn: <a href="https://www.linkedin.com/in/jarkkoilomaki" target="_blank"><u>LinkedIn-profiili</u></a> <br/>
             🗳️ Vaalikoneet: 
             <a href="https://www.uusimaa.fi/vaalikone/#/101/kotikunta/638/ehdokkaat/7906" target="_blank"><u>Uusimaa</u></a>, 
+			<a href="https://vaalikone.online/2/72/candidate/3755" target="_blank"><u>Itäväylä</u></a>, 
             <a href="https://www.mtvuutiset.fi/vaalikone/101/vaalipiiri/351/ehdokkaat/14582" target="_blank"><u>MTV Vaalikone</u></a>, 
             <a href="https://vaalit.yle.fi/vaalikone/kuntavaalit2025/183/ehdokkaat/12080" target="_blank"><u>YLE Vaalikone</u></a> 
+			<a href="https://www.vaalikone.fi/kunta2025/hs/ehdokkaat/0904c3c0-dd95-47d7-a118-85620cdbed74" target="_blank"><u>Sanoma Vaalikone</u></a>, 
         </p>
     </div>
     <div class="contact-number">
