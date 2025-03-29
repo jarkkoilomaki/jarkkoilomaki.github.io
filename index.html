@@ -655,7 +655,7 @@
     <p>Voit pelata näitä pelejä suoraan selaimessasi! Taustalla oli ajatus siitä, miten tekoälyä (Claude Sonet ja OpenAI ChatGPT) voisi tällaisessa hyödyntää.</p>
     <div class="game-container">
         <div class="game-card" onclick="openModal('Muistipeli')">
-            <img src="img/memcard01.jpg" alt="Peli 1" />
+            <img src="img/memcard01.jpg" alt="Muistipeli" />
             <h4>Porvoo-aiheinen muistipeli</h4>
         </div><br />
         <!-- <div class="game-card" onclick="openModal('game2')">
@@ -693,7 +693,7 @@
         function openModal(game) {
           document.getElementById('gameModal').style.display = 'flex';
           document.getElementById('gameTitle').innerText = game;
-          if (game == 'game1') {
+          if (game == 'Muistipeli') {
             document.getElementById('gameFrame').innerHTML = '<p>' + game + ' ladataan...</p>';
             startMemoryGame('gameFrame', 10, 60, 60);
         }
